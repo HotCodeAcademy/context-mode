@@ -12,7 +12,7 @@ const Component1 = ({ isDarkMode }) => {
         margin: "10px",
       }}
     >
-        <p>Preview Mode</p>
+        <p>Preview</p>
       <Component2 isDarkMode={isDarkMode} />
     </div>
   );
