@@ -1,21 +1,24 @@
-import {useState} from 'react'
+import { useState } from "react";
 import Component1 from "./components/Component1";
 import Component2 from "./components/Component2";
 
 import "./App.css";
 
 function App() {
-  const [darkMode, toggleDarkMode] = useState(false)
-  
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prevState) => !prevState);
+  };
+
   return (
     <div className="App">
-      <div>
-        <Component1 isDarkMode={darkMode} />
-        <Component2 isDarkMode={darkMode}/>
-      </div>
+      <h3>{darkMode ? "Dark" : "Light"} Mode</h3>
 
-      <button onClick={() => toggleDarkMode((prevState) => !prevState)}>
-        Change mode
+      <Component1 isDarkMode={darkMode} />
+
+      <button onClick={toggleDarkMode} className="btn">
+        Change to {!darkMode ? "dark" : "light"} mode
       </button>
     </div>
   );
