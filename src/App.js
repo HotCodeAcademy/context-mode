@@ -1,23 +1,25 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Component1 from "./components/Component1";
+
+import {useAppContext} from './store/AppContext'
 
 import "./App.css";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const {isDarkMode, setIsDarkMode} = useAppContext()
 
   const toggleDarkMode = () => {
-    setDarkMode((prevState) => !prevState);
+    setIsDarkMode((prevState) => !prevState);
   };
 
   return (
     <div className="App">
-      <h3>{darkMode ? "Dark" : "Light"} Mode</h3>
+      <h3>{isDarkMode ? "Dark" : "Light"} Mode</h3>
 
-      <Component1 isDarkMode={darkMode} />
+      <Component1/>
 
       <button onClick={toggleDarkMode} className="btn">
-        Change to {!darkMode ? "dark" : "light"} mode
+        Change to {!isDarkMode ? "dark" : "light"} mode
       </button>
     </div>
   );

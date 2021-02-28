@@ -1,4 +1,8 @@
-const Component2 = ({ isDarkMode }) => {
+import {useAppContext} from '../store/AppContext'
+
+const Component2 = () => {
+    const {isDarkMode} = useAppContext()
+
   return (
     <div
       style={{

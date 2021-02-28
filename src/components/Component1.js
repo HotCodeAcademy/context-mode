@@ -1,6 +1,6 @@
 import Component2 from "./Component2";
 
-const Component1 = ({ isDarkMode }) => {
+const Component1 = () => {
   return (
     <div
       style={{
@@ -13,7 +13,7 @@ const Component1 = ({ isDarkMode }) => {
       }}
     >
         <p>Preview</p>
-      <Component2 isDarkMode={isDarkMode} />
+      <Component2/>
     </div>
   );
 };
